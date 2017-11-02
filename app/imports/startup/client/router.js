@@ -61,7 +61,7 @@ userRoutes.route('/profile', {
 });
 
 export const filterPageRouteName = 'Filter_Page';
-userRoutes.route('/filter', {
+userRoutes.route('/add-recipe', {
   name: filterPageRouteName,
   action() {
     BlazeLayout.render('User_Layout', { main: filterPageRouteName });

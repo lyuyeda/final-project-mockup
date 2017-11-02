@@ -8,6 +8,8 @@ import { Interests } from '/imports/api/interest/InterestCollection';
 const displaySuccessMessage = 'displaySuccessMessage';
 const displayErrorMessages = 'displayErrorMessages';
 
+export const levelList = ['Yes', 'No'];
+
 Template.Profile_Page.onCreated(function onCreated() {
   this.subscribe(Interests.getPublicationName());
   this.subscribe(Profiles.getPublicationName());
@@ -37,6 +39,9 @@ Template.Profile_Page.helpers({
         function makeInterestObject(interest) {
           return { label: interest.name, selected: _.contains(selectedInterests, interest.name) };
         });
+  },
+  levels() {
+    return _.map(levelList, function makeLevelObject(level) { return { label: level }; });
   },
 });
 

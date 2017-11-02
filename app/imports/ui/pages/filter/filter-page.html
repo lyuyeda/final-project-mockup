@@ -1,16 +1,52 @@
 <template name="Filter_Page">
+
   {{#if Template.subscriptionsReady}}
-    <div style="margin-top: 10px" class="ui container">
 
-      <form class="ui equal width form filter-data-form">
-        <div class="field">
-          {{> Select_Form_Control label="Interests" options=interests multiple=true }}
-        </div>
-        <button class="ui teal button" type="submit">Filter</button>
-      </form>
-
-      {{> Filter_Page_Directory profiles=profiles }}
-
+  <div class="ui text container segment">
+    <div class="ui dividing header">
+      Profile
     </div>
+    <form class="ui equal width form profile-data-form {{ successClass }} {{ errorClass }}">
+
+      <div class="fields">
+        {{> Text_Form_Control label="Title" placeholder="Title" value=profile.firstName errorMessage=(fieldError
+        "firstName")}}
+        {{> Text_Form_Control label="Servinds" placeholder="Servings" value=profile.firstName errorMessage=(fieldError
+        "firstName")}}
+      </div>
+
+      <div class="field">
+        {{> Select_Form_Control label="Equipment" options=interests errorMessage=(fieldError "interests") multiple=true
+        }}
+      </div>
+
+      <div class="fields">
+        <div class="twelve wide field">
+          {{> Select_Form_Control label="Ingredients" options=interests errorMessage=(fieldError "interests")
+          multiple=true }}
+        </div>
+        <div class="two wide field">
+          {{> Text_Form_Control label="Qty" placeholder="Qty" value=profile.firstName errorMessage=(fieldError
+          "firstName")}}
+        </div>
+        <div class="two wide field">
+          {{> Text_Form_Control label="Unit" placeholder="Unit" value=profile.firstName errorMessage=(fieldError
+          "firstName")}}
+        </div>
+      </div>
+
+      {{> TextArea_Form_Control label="Instructions" value=profile.bio placeholder="Intructions"
+      errorMessage=(fieldError "bio")}}
+
+      <button class="ui primary button" type="submit">Submit</button>
+      {{#if displaySuccessMessage}}
+      <div class="ui success message">
+        <p>Profile data successfully updated.</p>
+      </div>
+      {{/if}}
+    </form>
+  </div>
+
   {{/if}}
+
 </template>
