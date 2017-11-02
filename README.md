@@ -1,7 +1,7 @@
 # final-project-mockup
 
-![](images/landing.png)
+![](https://github.com/lyuyeda/final-project-mockup/tree/master/app/public/images/landing.png)
 
-![](images/profile.png)
+![](https://github.com/lyuyeda/final-project-mockup/tree/master/app/public/images/profile.png)
 
-![](images/add-recipe.png)
+![](https://github.com/lyuyeda/final-project-mockup/tree/master/app/public/images/add-recipe.png)
